@@ -314,7 +314,7 @@ char *be_http_getuser(void *handle, const char *username, const char *password, 
 		try++;
 		re = http_post(handle, conf->getuser_uri, NULL, username, password, NULL, -1, METHOD_GETUSER);
 	}
-	if (re == 1) {
+	if (re == 1 && authenticated != NULL) {
 		*authenticated = 1;
 	}
 	return NULL;
